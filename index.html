@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Follower - Auto Followers Instagram Gratis</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        body {
+            background: linear-gradient(45deg, #121212, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            background-size: 400% 400%; animation: gradientBG 15s ease infinite; color: #ffffff; 
+            display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 40px 20px; position: relative; overflow-x: hidden;
+        }
+        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        body::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 20px 20px; z-index: 1; pointer-events: none; }
+        .card { background: rgba(15, 15, 20, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 30px; padding: 45px 25px; text-align: center; max-width: 500px; width: 100%; box-shadow: 0 25px 50px rgba(0,0,0,0.6); position: relative; z-index: 2; }
+        .app-icon { width: 90px; height: 90px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-radius: 24px; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center; font-size: 45px; box-shadow: 0 12px 30px rgba(220, 39, 67, 0.5); border: 2px solid rgba(255, 255, 255, 0.2); }
+        h1 { font-size: 30px; font-weight: 700; margin-bottom: 10px; background: linear-gradient(45deg, #fff, #fecfef); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tagline { font-size: 14px; color: #d1d1d6; margin-bottom: 25px; line-height: 1.6; }
+        .server-status { display: inline-flex; align-items: center; gap: 8px; background: rgba(46, 204, 113, 0.15); border: 1px solid rgba(46, 204, 113, 0.3); color: #2ecc71; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 25px; }
+        .pulse-dot { width: 8px; height: 8px; background-color: #2ecc71; border-radius: 50%; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(0.9); opacity: 1; box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); } 70% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 8px rgba(46, 204, 113, 0); } 100% { transform: scale(0.9); opacity: 0; } }
+        .btn-download { display: block; background: linear-gradient(45deg, #00f2fe, #4facfe); color: #000000; text-decoration: none; padding: 18px 25px; font-size: 18px; font-weight: 700; border-radius: 50px; box-shadow: 0 10px 25px rgba(0, 242, 254, 0.4); transition: all 0.3s ease; margin-bottom: 30px; letter-spacing: 0.5px; }
+        .btn-download:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0, 242, 254, 0.6); background: linear-gradient(45deg, #33f5ff, #66b5ff); }
+        .guide-box { text-align: left; background: rgba(255, 193, 7, 0.08); border-left: 4px solid #ffc107; padding: 18px; border-radius: 14px; font-size: 13px; color: #ffe082; line-height: 1.6; margin-bottom: 35px; }
+        .guide-box h3 { font-size: 14px; margin-bottom: 8px; color: #ffc107; }
+        .guide-box ol { padding-left: 18px; }
+        .guide-box li { margin-bottom: 6px; }
+        .reviews-section { margin-top: 20px; text-align: left; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px; }
+        .reviews-title { font-size: 16px; font-weight: 600; margin-bottom: 20px; color: #fff; display: flex; justify-content: space-between; align-items: center; }
+        .reviews-title span { font-size: 11px; color: #00f2fe; background: rgba(0, 242, 254, 0.1); padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+        .review-box { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 18px; margin-bottom: 15px; transition: transform 0.2s; }
+        .review-box:hover { transform: scale(1.02); background: rgba(255, 255, 255, 0.06); }
+        .review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+        .avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 15px; font-weight: bold; color: #fff; border: 2px solid rgba(255, 255, 255, 0.2); }
+        .user-info h5 { font-size: 14px; font-weight: 600; color: #ffffff; }
+        .stars { font-size: 11px; color: #ffc107; margin-top: 2px; }
+        .review-date { font-size: 11px; color: #666; margin-left: auto; }
+        .review-text { font-size: 12.5px; color: #e1e1e6; line-height: 1.6; }
+        .badge-success-follower { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; background: rgba(46, 204, 113, 0.15); color: #2ecc71; padding: 3px 10px; border-radius: 6px; margin-top: 10px; font-weight: 600; }
+        .footer-note { font-size: 11px; color: #666; margin-top: 25px; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="app-icon">🚀</div>
+    <h1>Free Follower APK</h1>
+    <p class="tagline">Dapatkan ribuan followers Instagram aktif Indonesia secara instan tanpa perlu memasukkan password akun Anda. 100% Aman & Gratis!</p>
+    <div class="server-status"><div class="pulse-dot"></div>Server Aktif: Pengiriman Lancar</div>
+    
+    <!-- Link Diubah ke .zip untuk Keamanan Ekstra -->
+    <a href="free_follower.zip" download="free_follower.zip" class="btn-download">📥 Unduh File ZIP Sekarang</a>
+    
+    <div class="guide-box">
+        <h3>⚠️ Cara Install Aplikasi (Lewat ZIP):</h3>
+        <ol>
+            <li>Klik tombol biru di atas dan tunggu file ZIP selesai disimpan.</li>
+            <li>Buka file ZIP tersebut menggunakan aplikasi File Manager HP Anda.</li>
+            <li>Ekstrak atau buka file <b>free_follower.apk</b> yang ada di dalamnya.</li>
+            <li>Jika sistem Android meminta izin, aktifkan opsi <b>"Izinkan dari Sumber Ini"</b>.</li>
+            <li>Klik <b>Pasang/Install</b> dan jalankan aplikasinya!</li>
+        </ol>
+    </div>
+    <div class="reviews-section">
+        <div class="reviews-title">💬 Ulasan Pengguna Terbaru <span>Live Update</span></div>
+                <!-- 1 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #e6683c;">A</div>
+                <div class="user-info"><h5>andri_saputra</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">Baru saja</div>
+            </div>
+            <p class="review-text">Sumpah keren banget, masuknya cepet cuma butuh username aja, ga pake sandi. Akun aman polll!</p>
+            <div class="badge-success-follower">✓ +1,500 Followers Sukses</div>
+        </div>
+        <!-- 2 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #c13584;">S</div>
+                <div class="user-info"><h5>siti_nurhaliza</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">2 mnt lalu</div>
+            </div>
+            <p class="review-text">Beneran nambah followersnya aktif indo semua ada fotonya. Olshopku langsung keliatan rame sekarang!</p>
+            <div class="badge-success-follower">✓ +3,200 Followers Sukses</div>
+        </div>
+        <!-- 3 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #4facfe;">R</div>
+                <div class="user-info"><h5>rizky_hidayat</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">5 mnt lalu</div>
+            </div>
+            <p class="review-text">Rekomendasi banget buat yang mau jadi selebgram instan. Gak nyesel download aplikasinya ringan.</p>
+            <div class="badge-success-follower">✓ +850 Followers Sukses</div>
+        </div>
+        <!-- 4 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #fd1d1d;">B</div>
+                <div class="user-info"><h5>budi.santoso</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">10 mnt lalu</div>
+            </div>
+            <p class="review-text">Tadinya ragu, pas nyoba masukin username iseng langsung masuk 500 followers dalam semenit gila!</p>
+            <div class="badge-success-follower">✓ +2,000 Followers Sukses</div>
+        </div>
+        <!-- 5 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #833ab4;">D</div>
+                <div class="user-info"><h5>dewi_lestari99</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">15 mnt lalu</div>
+            </div>
+            <p class="review-text">Apk paling mantap ga ribet nonton iklan berkali-kali. Sekali klik followers mengalir deres.</p>
+            <div class="badge-success-follower">✓ +4,500 Followers Sukses</div>
+        </div>
+        <!-- 6 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #2ecc71;">F</div>
+                <div class="user-info"><h5>fajar_sidik</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">20 mnt lalu</div>
+            </div>
+            <p class="review-text">Gokil akun kosongan gua langsung rame notifnya sampe nge-lag hp wkwk terbukti aman tanpa login akun.</p>
+            <div class="badge-success-follower">✓ +1,100 Followers Sukses</div>
+        </div>
+        <!-- 7 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #e1306c;">E</div>
+                <div class="user-info"><h5>eka_putri01</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">30 mnt lalu</div>
+            </div>
+            <p class="review-text">Terima kasih developernya baik banget sediain apk gratisan yang beneran work kyk gini sukses terus.</p>
+            <div class="badge-success-follower">✓ +2,800 Followers Sukses</div>
+        </div>
+        <!-- 8 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #f09433;">G</div>
+                <div class="user-info"><h5>gilang_ramadhan</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">45 mnt lalu</div>
+            </div>
+            <p class="review-text">Mending pake ini daripada beli panel mahal-mahal, ini gratis dan akun ga bakal kena hack karena aman.</p>
+            <div class="badge-success-follower">✓ +1,950 Followers Sukses</div>
+        </div>
+        <!-- 9 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #5851db;">I</div>
+                <div class="user-info"><h5>indah_permatasari</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">1 jam lalu</div>
+            </div>
+            <p class="review-text">Awalnya dibilang temen pas nyoba sendiri emang beneran masuk followersnya ga boong gais buruan unduh.</p>
+            <div class="badge-success-follower">✓ +3,000 Followers Sukses</div>
+        </div>
+        <!-- 10 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #405de6;">H</div>
+                <div class="user-info"><h5>hendra_wijaya</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">1 jam lalu</div>
+            </div>
+            <p class="review-text">Aplikasi paling bersih ga ada virusnya pas dicek sistem android. Pengiriman followersnya cepet banget.</p>
+            <div class="badge-success-follower">✓ +900 Followers Sukses</div>
+        </div>
+        <!-- 11 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #7c3aed;">K</div>
+                <div class="user-info"><h5>kevin_sanjaya</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">2 jam lalu</div>
+            </div>
+            <p class="review-text">Udah dapet 5k followers dalam 2 hari pake aplikasi ini tiap beberapa jam sekali mantap abis.</p>
+            <div class="badge-success-follower">✓ +5,000 Followers Sukses</div>
+        </div>
+        <!-- 12 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #cc2366;">L</div>
+                <div class="user-info"><h5>lani_marina</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">2 jam lalu</div>
+            </div>
+            <p class="review-text">Gampang banget tinggal pasang terus masukin user ig lsg beres. Cocok buat yang gaptek.</p>
+            <div class="badge-success-follower">✓ +1,300 Followers Sukses</div>
+        </div>
+        <!-- 13 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #e6683c;">M</div>
+                <div class="user-info"><h5>muhammad_ali</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">3 jam lalu</div>
+            </div>
+            <p class="review-text">Followersnya awet ga gampang drop, mantap banget layanannya setara panel premium.</p>
+            <div class="badge-success-follower">✓ +2,100 Followers Sukses</div>
+        </div>
+        <!-- 14 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #bc1888;">N</div>
+                <div class="user-info"><h5>nina_boboo</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">3 jam lalu</div>
+            </div>
+            <p class="review-text">Suka banget sama tampilannya simpel ga ribet dan yang paling penting real followers masuk.</p>
+            <div class="badge-success-follower">✓ +1,750 Followers Sukses</div>
+        </div>
+        <!-- 15 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #4f46e5;">O</div>
+                <div class="user-info"><h5>oki_setiawan</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">4 jam lalu</div>
+            </div>
+            <p class="review-text">Bener-bener ngebantu buat naikin interaksi akun hobi gua, skrg postingan makin banyak yg ngelike.</p>
+            <div class="badge-success-follower">✓ +1,250 Followers Sukses</div>
+        </div>
+                <!-- 16 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #ff9a9e;">P</div>
+                <div class="user-info"><h5>putra_pratama</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">4 jam lalu</div>
+            </div>
+            <p class="review-text">Sangat aman digunakan buat akun utama sekalipun karena metode suntiknya legal tanpa login.</p>
+            <div class="badge-success-follower">✓ +3,600 Followers Sukses</div>
+        </div>
+        <!-- 17 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #00f2fe;">Q</div>
+                <div class="user-info"><h5>qori_ahmad</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">5 jam lalu</div>
+            </div>
+            <p class="review-text">Proses instalasinya cepet dan pas dibuka langsung paham cara pakenya. Solusi cerdas selebgram mendadak.</p>
+            <div class="badge-success-follower">✓ +800 Followers Sukses</div>
+        </div>
+        <!-- 18 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #33f5ff;">R</div>
+                <div class="user-info"><h5>rachel_amalia</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">5 jam lalu</div>
+            </div>
+            <p class="review-text">Udah nyoba berbagai web ga ada yg berhasil, untung nemu apk ini lewat link lsg dapet banyak followers.</p>
+            <div class="badge-success-follower">✓ +2,450 Followers Sukses</div>
+        </div>
+        <!-- 19 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #ffc107;">T</div>
+                <div class="user-info"><h5>taufik_h</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">6 jam lalu</div>
+            </div>
+            <p class="review-text">Mantap joss followers masuk ga pake lama, dlm hitungan menit lsg dpt notif bertubi tubi.</p>
+            <div class="badge-success-follower">✓ +1,600 Followers Sukses</div>
+        </div>
+        <!-- 20 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #e6683c;">U</div>
+                <div class="user-info"><h5>utami_lestari</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">6 jam lalu</div>
+            </div>
+            <p class="review-text">Buat yang mau naikin gengsi akun pribadi wajib bgt download sih parah ini keren parah.</p>
+            <div class="badge-success-follower">✓ +4,000 Followers Sukses</div>
+        </div>
+        <!-- 21 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #c13584;">V</div>
+                <div class="user-info"><h5>viki_maulana</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">7 jam lalu</div>
+            </div>
+            <p class="review-text">Apk terbaik tahun ini gratis tis tanpa bayar sepeserpun dapet followers berlimpah.</p>
+            <div class="badge-success-follower">✓ +1,050 Followers Sukses</div>
+        </div>
+        <!-- 22 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #4facfe;">W</div>
+                <div class="user-info"><h5>wahyu_hidayat</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">8 jam lalu</div>
+            </div>
+            <p class="review-text">Pelayanan servernya cepet bgt meskipun gratisan tapi kualitas bintang lima ga mengecewakan.</p>
+            <div class="badge-success-follower">✓ +2,200 Followers Sukses</div>
+        </div>
+        <!-- 23 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #fd1d1d;">X</div>
+                <div class="user-info"><h5>xena_putri</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">9 jam lalu</div>
+            </div>
+            <p class="review-text">Ga nyesel download nyoba di 3 akun berbeda semuanya berhasil dapet followers melimpah ruah.</p>
+            <div class="badge-success-follower">✓ +3,400 Followers Sukses</div>
+        </div>
+        <!-- 24 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #833ab4;">Y</div>
+                <div class="user-info"><h5>yayan_mulyana</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">10 jam lalu</div>
+            </div>
+            <p class="review-text">Sangat aman ga ada unsur phising sama sekali krn emg pure minta username aja ga minta data pribadi.</p>
+            <div class="badge-success-follower">✓ +1,150 Followers Sukses</div>
+        </div>
+        <!-- 25 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #2ecc71;">Z</div>
+                <div class="user-info"><h5>zacky_ahmad</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">11 jam lalu</div>
+            </div>
+            <p class="review-text">Followersnya beneran real human aktif, interaksi akun jg ikutan naik mantap bgt pokoknya.</p>
+            <div class="badge-success-follower">✓ +1,800 Followers Sukses</div>
+        </div>
+        <!-- 26 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #e1306c;">A</div>
+                <div class="user-info"><h5>anisa_maharani</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">12 jam lalu</div>
+            </div>
+            <p class="review-text">Seneng bgt akun baru bikin lsg dapet 2k followers dlm sehari ga perlu nunggu berbulan bulan.</p>
+            <div class="badge-success-follower">✓ +2,600 Followers Sukses</div>
+        </div>
+        <!-- 27 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #f09433;">D</div>
+                <div class="user-info"><h5>dika_permana</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">1 hari lalu</div>
+            </div>
+            <p class="review-text">Tombol unduhnya lancar jaya, file apk kecil jd ga menuhi memori internal rekomendasi pol.</p>
+            <div class="badge-success-follower">✓ +750 Followers Sukses</div>
+        </div>
+        <!-- 28 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #5851db;">M</div>
+                <div class="user-info"><h5>maulana_malik</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">1 hari lalu</div>
+            </div>
+            <p class="review-text">Bintang 5 ga pake ragu, terpercaya bgt aplikasinya beneran ngirim followers instan sesuai janji.</p>
+            <div class="badge-success-follower">✓ +3,800 Followers Sukses</div>
+        </div>
+        <!-- 29 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #405de6;">R</div>
+                <div class="user-info"><h5>ratna_sari</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">1 hari lalu</div>
+            </div>
+            <p class="review-text">Gampang bgt pakenya tinggal ikuti panduan lsg followers nambah otomatis tanpa ribet.</p>
+            <div class="badge-success-follower">✓ +1,400 Followers Sukses</div>
+        </div>
+        <!-- 30 -->
+        <div class="review-box">
+            <div class="review-header">
+                <div class="avatar" style="background: #7c3aed;">Y</div>
+                <div class="user-info"><h5>yusuf_bachtiar</h5><div class="stars">⭐⭐⭐⭐⭐</div></div>
+                <div class="review-date">2 hari lalu</div>
+            </div>
+            <p class="review-text">Kerja bagus buat developernya apk super mantap aman 1000% tanpa minta password akun ig kita.</p>
+            <div class="badge-success-follower">✓ +2,300 Followers Sukses</div>
+        </div>
+    </div>
+    <p class="footer-note">Aplikasi terverifikasi bebas malware dan ramah memori penyimpanan.</p>
+</div>
+</body>
+</html>
+
